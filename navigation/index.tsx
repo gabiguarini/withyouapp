@@ -1,4 +1,4 @@
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { ColorSchemeName } from 'react-native';
@@ -6,8 +6,7 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import Home from '../screens/Home';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -17,16 +16,20 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
     roundness: 2,
     colors: {
       ...DefaultTheme.colors,
-      primary: '#E5E5E5',
-      accent: '#ED127C',
+      primary: '#ED127C',
+      background: '#E5E5E5',
+      card: '#FFFFFF',
+      text: 'rgba(30, 28, 97, 0.65)',
+      border: '#E5E5E5',
+      notification: '#ED127C',
     },
   };
 
   return (
-      <PaperProvider theme={theme}>
+      <PaperProvider>
         <NavigationContainer
           linking={LinkingConfiguration}
-          // theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+          theme={theme}
           >
           <RootNavigator />
         </NavigationContainer>
@@ -43,7 +46,6 @@ function RootNavigator() {
   return (
       <Stack.Navigator screenOptions={{ headerShown: false }} >
         <Stack.Screen name="Root" component={BottomTabNavigator} />
-        {/* <Stack.Screen name="Home" component={Home} /> */}
         <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       </Stack.Navigator>
   );

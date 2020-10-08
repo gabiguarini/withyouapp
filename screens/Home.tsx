@@ -1,18 +1,22 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
-import { useTheme } from 'react-native-paper';
+import { useTheme } from '@react-navigation/native';
 import { Text, View } from '../components/Themed';
 import { Button } from 'react-native-paper';
 
 export default function Home() {
-  const { colors } = useTheme()
+  const { colors } = useTheme();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome, User!</Text>
       <Text style={styles.subheader}>What do you want to do today?</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Button mode="contained" color='#ED127C' onPress={() => console.log('click')}>
+      <Button
+        mode="contained"
+        color='#ED127C'
+        // style={{ color: colors.primary }}
+        onPress={() => console.log('click')}>
           Find a Clinic
       </Button>
       <Button mode="contained" color='#ED127C' onPress={() => console.log('click')}>
@@ -49,5 +53,9 @@ const styles = StyleSheet.create({
   },
   subheader: {
     fontSize: 16
+  },
+  button: {
+    color: '#ED127C',
+    margin: '1em 0'
   }
 });

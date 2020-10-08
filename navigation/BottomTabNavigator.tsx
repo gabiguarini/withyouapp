@@ -21,7 +21,7 @@ export default function BottomTabNavigator() {
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
         name="TabOne"
-        component={Home}
+        component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -81,7 +81,9 @@ function HomeNavigator() {
       <HomeStack.Screen
         name="Home"
         component={Home}
-        options={{ headerTitle: 'Home' }}
+        options={{
+          headerTitle: 'Home',
+        }}
       />
     </HomeStack.Navigator>
   );
