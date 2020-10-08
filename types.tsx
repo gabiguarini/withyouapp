@@ -17,7 +17,7 @@ export type TabTwoParamList = {
 };
 
 export type HomeParamList = {
-  Home: undefined;
+  HomeScreen: undefined;
 };
 
 export type TabThreeParamList = {

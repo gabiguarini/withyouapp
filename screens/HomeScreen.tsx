@@ -5,7 +5,7 @@ import { useTheme } from '@react-navigation/native';
 import { Text, View } from '../components/Themed';
 import { Button } from 'react-native-paper';
 
-export default function Home() {
+export default function HomeScreen() {
   const { colors } = useTheme();
   return (
     <View style={styles.container}>

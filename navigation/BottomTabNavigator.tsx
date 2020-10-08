@@ -7,7 +7,7 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import Home from '../screens/Home';
+import HomeScreen from '../screens/HomeScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
 import TabFourScreen from '../screens/TabFourScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, TabFourParamList, HomeParamList } from '../types';
@@ -105,7 +105,7 @@ function HomeNavigator() {
     <HomeStack.Navigator>
       <HomeStack.Screen
         name="Home"
-        component={Home}
+        component={HomeScreen}
         options={{
           headerTitle: 'Home',
         }}
