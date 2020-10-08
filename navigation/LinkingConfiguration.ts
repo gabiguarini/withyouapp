@@ -1,4 +1,5 @@
 import * as Linking from 'expo-linking';
+import FAQScreen from '../screens/FAQScreen';
 
 export default {
   prefixes: [Linking.makeUrl("/")],
@@ -6,24 +7,29 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          Home: {
             screens: {
-              TabOneScreen: "one",
+              HomeScreen: 'home',
             },
           },
-          TabTwo: {
+          MapView: {
             screens: {
-              TabTwoScreen: "two",
+              MapViewScreen: 'map view',
             },
           },
-          TabThree: {
+          UserClinics: {
             screens: {
-              TabThreeScreen: "three",
+              UserClinicsScreen: "user clinics",
             },
           },
-          TabFour: {
+          UserProfile: {
             screens: {
-              TabFourScreen: "four",
+              UserProfileScreen: "user profile",
+            },
+          },
+          FAQ: {
+            screens: {
+              FAQScreen: "FAQs",
             },
           }
         },
