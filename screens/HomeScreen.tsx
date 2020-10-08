@@ -1,12 +1,18 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
-import { useTheme } from '@react-navigation/native';
+import { useTheme, useNavigation } from '@react-navigation/native';
 import { Text, View } from '../components/Themed';
 import { Button } from 'react-native-paper';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { HomeParamList } from '../types'
+import { NavigationActions } from 'react-navigation';
 
 export default function HomeScreen() {
   const { colors } = useTheme();
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome, User!</Text>
@@ -15,8 +21,8 @@ export default function HomeScreen() {
       <Button
         mode="contained"
         color='#ED127C'
-        // style={{ color: colors.primary }}
-        onPress={() => console.log('click')}>
+        onPress={() => navigation.navigate('MapViewScreen')}
+      >
           Find a Clinic
       </Button>
       <Button mode="contained" color='#ED127C' onPress={() => console.log('click')}>
@@ -56,6 +62,6 @@ const styles = StyleSheet.create({
   },
   button: {
     color: '#ED127C',
-    margin: '1em 0'
+    margin: '1em 1em'
   }
 });
