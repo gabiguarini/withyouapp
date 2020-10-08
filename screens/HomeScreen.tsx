@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { useTheme, useNavigation } from '@react-navigation/native';
 import { Text, View } from '../components/Themed';
+import { Image } from 'react-native';
 import { Button } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -15,61 +16,94 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome, User!</Text>
-      <Text style={styles.subheader}>What do you want to do today?</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      <Text style={styles.title}>Good morning, Jane!</Text>
+      <Text style={styles.body}>How are you feeling today?</Text>
+      <View
+        style={styles.separator}
+        lightColor="#eee"
+        darkColor="rgba(255,255,255,0.1)"
+      />
       <Button
         mode="contained"
-        color='#ED127C'
-        onPress={() => navigation.navigate('MapViewScreen')}
+        color="#ED127C"
+        onPress={() => navigation.navigate("MapViewScreen")}
       >
-          Find a Clinic
+        Find a Clinic
       </Button>
       <Button
         mode="contained"
-        color='#ED127C'
-        onPress={() => navigation.navigate('UserClinicsScreen')}>
-          My Reviews
+        color="#ED127C"
+        onPress={() => navigation.navigate("UserClinicsScreen")}
+      >
+        My Reviews
       </Button>
       <Button
         mode="contained"
-        color='#ED127C'
-        onPress={() => navigation.navigate('UserProfileScreen')}>
-          My Profile
+        color="#ED127C"
+        onPress={() => navigation.navigate("UserProfileScreen")}
+      >
+        My Profile
       </Button>
       <Button
         mode="contained"
-        color='#ED127C'
-        onPress={() => navigation.navigate('FAQScreen')}>
-          FAQs
+        color="#ED127C"
+        onPress={() => navigation.navigate("FAQScreen")}
+      >
+        FAQs
       </Button>
-      <Button mode="contained" color='#ED127C' onPress={() => console.log('click')}>
-          Logout
+      <Button
+        mode="contained"
+        color="#ED127C"
+        onPress={() => console.log("click")}
+      >
+        Logout
       </Button>
+      <Image
+        style={{
+          resizeMode: "contain",
+          height: 150,
+          width: 200,
+        }}
+        source={require("../assets/images/woman.png")}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#F9F8FD",
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    paddingLeft: 32,
+    paddingTop: 8
   },
   title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 36,
+    color: '#333333',
+    fontFamily: "poppins-semibold",
+    paddingBottom: 24
+  },
+  body: {
+    fontSize: 18,
+    color: '#1E1C61',
+    fontFamily: "poppins-regular",
   },
   separator: {
     marginVertical: 30,
     height: 1,
-    width: '80%',
+    width: "80%",
   },
   subheader: {
-    fontSize: 16
+    fontSize: 18,
+    fontFamily: "poppins-semibold",
   },
   button: {
-    color: '#ED127C',
-    margin: '1em 1em'
-  }
+    alignContent: "center",
+    color: "#ED127C",
+    fontSize: 18,
+    fontFamily: "poppins-light",
+    margin: "1em 1em",
+  },
 });
