@@ -9,15 +9,16 @@ import useColorScheme from '../hooks/useColorScheme';
 import HomeScreen from '../screens/HomeScreen';
 import MapViewScreen from '../screens/MapViewScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import TabThreeScreen from '../screens/TabThreeScreen';
-import TabFourScreen from '../screens/TabFourScreen';
+import UserClinicsScreen from '../screens/UserClinicsScreen';
+import UserProfileScreen from '../screens/UserProfileScreen';
+import FAQScreen from '../screens/FAQScreen';
 import {
   BottomTabParamList,
-  TabTwoParamList,
-  TabThreeParamList,
-  TabFourParamList,
   HomeParamList,
+  UserClinicsParamList,
+  UserProfileParamList,
   MapViewParamList,
+  TabTwoParamList,
 } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -35,7 +36,7 @@ export default function BottomTabNavigator() {
         component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} />
+            <MaterialCommunityIcons name="home" color={color} size={24} />
           ),
         }}
       />
@@ -44,25 +45,34 @@ export default function BottomTabNavigator() {
         component={MapViewNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="map-marker" color={color} />
+            <MaterialCommunityIcons name="map-marker" color={color} size={24} />
           ),
         }}
       />
       <BottomTab.Screen
-        name="TabThree"
-        component={TabThreeNavigator}
+        name="UserClinicsScreen"
+        component={UserClinicsNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <MaterialCommunityIcons name="hospital-box" color={color} size={24} />
           ),
         }}
       />
       <BottomTab.Screen
-        name="TabFour"
-        component={TabFourNavigator}
+        name="UserProfileScreen"
+        component={UserProfileNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <MaterialCommunityIcons name="comment-text" color={color} size={24} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="FAQScreen"
+        component={FAQNavigator}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="comment-text" color={color} size={24} />
           ),
         }}
       />
@@ -111,6 +121,48 @@ function MapViewNavigator() {
   );
 }
 
+const UserClinics = createStackNavigator<UserClinicsParamList>();
+
+function UserClinicsNavigator() {
+  return (
+    <UserClinics.Navigator>
+      <UserClinics.Screen
+        name="UserClinicsScreen"
+        component={UserClinicsScreen}
+        options={{ headerTitle: "My Clinics" }}
+      />
+    </UserClinics.Navigator>
+  );
+}
+
+const UserProfile = createStackNavigator<UserProfileParamList>();
+
+function UserProfileNavigator() {
+  return (
+    <UserProfile.Navigator>
+      <UserProfile.Screen
+        name="UserProfileScreen"
+        component={UserProfileScreen}
+        options={{ headerTitle: "My Profile" }}
+      />
+    </UserProfile.Navigator>
+  );
+}
+
+const FAQ = createStackNavigator<FAQParamList>();
+
+function FAQNavigator() {
+  return (
+    <FAQ.Navigator>
+      <FAQ.Screen
+        name="FAQScreen"
+        component={FAQScreen}
+        options={{ headerTitle: "FAQs" }}
+      />
+    </FAQ.Navigator>
+  );
+}
+
 const TabTwoStack = createStackNavigator<TabTwoParamList>();
 
 function TabTwoNavigator() {
@@ -122,33 +174,5 @@ function TabTwoNavigator() {
         options={{ headerTitle: 'Tab Two Title' }}
       />
     </TabTwoStack.Navigator>
-  );
-}
-
-const TabThreeStack = createStackNavigator<TabThreeParamList>();
-
-function TabThreeNavigator() {
-  return (
-    <TabThreeStack.Navigator>
-      <TabThreeStack.Screen
-        name="TabThreeScreen"
-        component={TabThreeScreen}
-        options={{ headerTitle: "Tab Three Title" }}
-      />
-    </TabThreeStack.Navigator>
-  );
-}
-
-const TabFourStack = createStackNavigator<TabFourParamList>();
-
-function TabFourNavigator() {
-  return (
-    <TabFourStack.Navigator>
-      <TabFourStack.Screen
-        name="TabFourScreen"
-        component={TabFourScreen}
-        options={{ headerTitle: "Tab Four Title" }}
-      />
-    </TabFourStack.Navigator>
   );
 }

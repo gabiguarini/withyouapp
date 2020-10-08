@@ -6,8 +6,9 @@ export type RootStackParamList = {
 export type BottomTabParamList = {
   HomeScreen: undefined;
   MapViewScreen: undefined;
-  TabThree: undefined;
-  TabFour: undefined;
+  UserClinicsScreen: undefined;
+  UserProfileScreen: undefined;
+  FAQScreen: undefined;
 };
 
 export type HomeParamList = {
@@ -16,16 +17,20 @@ export type HomeParamList = {
 
 export type MapViewParamList = {
   MapViewScreen: undefined;
+}
+
+export type UserClinicsParamList = {
+  UserClinicsScreen: undefined;
+};
+
+export type UserProfileParamList = {
+  UserProfileScreen: undefined;
+};
+
+export type FAQParamList = {
+  FAQScreen: undefined;
 };
 
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
-};
-
-export type TabThreeParamList = {
-  TabThreeScreen: undefined;
-};
-
-export type TabFourParamList = {
-  TabFourScreen: undefined;
 };

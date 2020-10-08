@@ -25,19 +25,27 @@ export default function HomeScreen() {
       >
           Find a Clinic
       </Button>
-      <Button mode="contained" color='#ED127C' onPress={() => console.log('click')}>
+      <Button
+        mode="contained"
+        color='#ED127C'
+        onPress={() => navigation.navigate('UserClinicsScreen')}>
           My Reviews
       </Button>
-      <Button mode="contained" color='#ED127C' onPress={() => console.log('click')}>
+      <Button
+        mode="contained"
+        color='#ED127C'
+        onPress={() => navigation.navigate('UserProfileScreen')}>
           My Profile
       </Button>
-      <Button mode="contained" color='#ED127C' onPress={() => console.log('click')}>
+      <Button
+        mode="contained"
+        color='#ED127C'
+        onPress={() => navigation.navigate('FAQScreen')}>
           FAQs
       </Button>
       <Button mode="contained" color='#ED127C' onPress={() => console.log('click')}>
           Logout
       </Button>
-      <EditScreenInfo path="/screens/Home.js" />
     </View>
   );
 }
