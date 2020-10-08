@@ -19,3 +19,11 @@ export type TabTwoParamList = {
 export type HomeParamList = {
   Home: undefined;
 };
+
+export type TabThreeParamList = {
+  TabThreeScreen: undefined;
+};
+
+export type TabFourParamList = {
+  TabFourScreen: undefined;
+};
