@@ -30,7 +30,3 @@ export type UserProfileParamList = {
 export type FAQParamList = {
   FAQScreen: undefined;
 };
-
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
-};

@@ -8,7 +8,6 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import HomeScreen from '../screens/HomeScreen';
 import MapViewScreen from '../screens/MapViewScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
 import UserClinicsScreen from '../screens/UserClinicsScreen';
 import UserProfileScreen from '../screens/UserProfileScreen';
 import FAQScreen from '../screens/FAQScreen';
@@ -18,8 +17,8 @@ import {
   UserClinicsParamList,
   UserProfileParamList,
   MapViewParamList,
-  TabTwoParamList,
-} from '../types';
+  FAQParamList
+} from "../types";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -160,19 +159,5 @@ function FAQNavigator() {
         options={{ headerTitle: "FAQs" }}
       />
     </FAQ.Navigator>
-  );
-}
-
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
-
-function TabTwoNavigator() {
-  return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
-      />
-    </TabTwoStack.Navigator>
   );
 }
