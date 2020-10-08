@@ -11,8 +11,3 @@ web-build/
 
 # macOS
 .DS_Store
-
-# CocoaPods
-/ios/Pods/
-/ios/Podfile.lock
-/ios/tmp.xcconfig
