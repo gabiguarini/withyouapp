@@ -72,7 +72,7 @@ export default function BottomTabNavigator() {
         component={FAQNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="comment-text" color={color} size={24} />
+            <MaterialCommunityIcons name="help-circle" color={color} size={24} />
           ),
         }}
       />
