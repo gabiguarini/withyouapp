@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { HomeParamList } from '../types'
 import { NavigationActions } from 'react-navigation';
+import { color } from 'react-native-reanimated';
 
 export default function HomeScreen() {
   const { colors } = useTheme();
@@ -16,59 +17,33 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Good morning, Jane!</Text>
-      <Text style={styles.body}>How are you feeling today?</Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
+
+      <View style={styles.top}>
+        <Text style={styles.title}>Good morning, Jane!</Text>
+        <Text style={styles.body}>How are you feeling today?</Text>
+      </View>
+
       <Button
         mode="contained"
         color="#ED127C"
         uppercase={false}
         onPress={() => navigation.navigate("MapViewScreen")}
+        style={{marginTop: 64, alignSelf: "center"}}
       >
-        Find a Clinic
-      </Button>
-      <Button
-        mode="contained"
-        color="#ED127C"
-        uppercase={false}
-        onPress={() => navigation.navigate("UserClinicsScreen")}
-      >
-        My Reviews
+        <Text style={styles.buttonText}>Review a Clinic</Text>
       </Button>
       <Button
         mode="contained"
         color="#ED127C"
         uppercase={false}
         onPress={() => navigation.navigate("UserProfileScreen")}
+        style={{marginTop: 32, alignSelf: "center"}}
       >
-        My Profile
+        <Text style={styles.buttonText}>Update Details</Text>
       </Button>
-      <Button
-        mode="contained"
-        color="#ED127C"
-        uppercase={false}
-        onPress={() => navigation.navigate("FAQScreen")}
-      >
-        FAQs
-      </Button>
-      <Button
-        mode="contained"
-        color="#ED127C"
-        uppercase={false}
-        onPress={() => console.log("click")}
-      >
-        Logout
-      </Button>
+      
       <Image
-        style={{
-          resizeMode: "contain",
-          height: 150,
-          width: 200,
-        }}
+        style={{resizeMode: "contain", height: 150, width: 200, position: "absolute", bottom: 0, left: 0}}
         source={require("../assets/images/woman.png")}
       />
     </View>
@@ -81,8 +56,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "flex-start",
     justifyContent: "flex-start",
-    paddingLeft: 32,
     paddingTop: 8
+  },
+  top: {
+    backgroundColor: "#F9F8FD",
+    paddingLeft: 32
   },
   title: {
     fontSize: 36,
@@ -95,13 +73,9 @@ const styles = StyleSheet.create({
     color: '#1E1C61',
     fontFamily: "poppins-regular",
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-  subheader: {
+  buttonText: {
     fontSize: 18,
-    fontFamily: "poppins-semibold",
+    color: '#FFFFFF',
+    fontFamily: "poppins-regular",
   }
 });
