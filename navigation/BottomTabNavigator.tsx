@@ -28,14 +28,14 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="HomeScreen"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
+      tabBarOptions={{ activeTintColor: "#ED127C", showLabel: false }} 
     >
       <BottomTab.Screen
         name="HomeScreen"
         component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={24} />
+            <MaterialCommunityIcons name="home" color={color} size={36} />
           ),
         }}
       />
@@ -44,25 +44,7 @@ export default function BottomTabNavigator() {
         component={MapViewNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="map-marker" color={color} size={24} />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name="UserClinicsScreen"
-        component={UserClinicsNavigator}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="hospital-box" color={color} size={24} />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name="UserProfileScreen"
-        component={UserProfileNavigator}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="comment-text" color={color} size={24} />
+            <MaterialCommunityIcons name="spa" color={color} size={36} />
           ),
         }}
       />
@@ -71,18 +53,21 @@ export default function BottomTabNavigator() {
         component={FAQNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="help-circle" color={color} size={24} />
+            <MaterialCommunityIcons name="forum" color={color} size={36} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="UserProfileScreen"
+        component={UserProfileNavigator}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="account" color={color} size={36} />
           ),
         }}
       />
     </BottomTab.Navigator>
   );
-}
-
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
-function TabBarIcon(props: { name: string; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
