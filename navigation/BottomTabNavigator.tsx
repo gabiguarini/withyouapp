@@ -28,7 +28,7 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="HomeScreen"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
+      tabBarOptions={{ activeTintColor: "#ED127C", showLabel: false }} 
     >
       <BottomTab.Screen
         name="HomeScreen"
