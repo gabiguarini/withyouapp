@@ -26,6 +26,7 @@ export default function HomeScreen() {
       <Button
         mode="contained"
         color="#ED127C"
+        uppercase={false}
         onPress={() => navigation.navigate("MapViewScreen")}
       >
         Find a Clinic
@@ -33,6 +34,7 @@ export default function HomeScreen() {
       <Button
         mode="contained"
         color="#ED127C"
+        uppercase={false}
         onPress={() => navigation.navigate("UserClinicsScreen")}
       >
         My Reviews
@@ -40,6 +42,7 @@ export default function HomeScreen() {
       <Button
         mode="contained"
         color="#ED127C"
+        uppercase={false}
         onPress={() => navigation.navigate("UserProfileScreen")}
       >
         My Profile
@@ -47,6 +50,7 @@ export default function HomeScreen() {
       <Button
         mode="contained"
         color="#ED127C"
+        uppercase={false}
         onPress={() => navigation.navigate("FAQScreen")}
       >
         FAQs
@@ -54,6 +58,7 @@ export default function HomeScreen() {
       <Button
         mode="contained"
         color="#ED127C"
+        uppercase={false}
         onPress={() => console.log("click")}
       >
         Logout
@@ -98,12 +103,5 @@ const styles = StyleSheet.create({
   subheader: {
     fontSize: 18,
     fontFamily: "poppins-semibold",
-  },
-  button: {
-    alignContent: "center",
-    color: "#ED127C",
-    fontSize: 18,
-    fontFamily: "poppins-light",
-    margin: "1em 1em",
-  },
+  }
 });
