@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { HomeParamList } from '../types'
 import { NavigationActions } from 'react-navigation';
+import { color } from 'react-native-reanimated';
 
 export default function HomeScreen() {
   const { colors } = useTheme();
@@ -16,56 +17,38 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Good morning, Jane!</Text>
-      <Text style={styles.body}>How are you feeling today?</Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
-      <Button
-        mode="contained"
-        color="#ED127C"
-        onPress={() => navigation.navigate("MapViewScreen")}
-      >
-        Find a Clinic
-      </Button>
-      <Button
-        mode="contained"
-        color="#ED127C"
-        onPress={() => navigation.navigate("UserClinicsScreen")}
-      >
-        My Reviews
-      </Button>
-      <Button
-        mode="contained"
-        color="#ED127C"
-        onPress={() => navigation.navigate("UserProfileScreen")}
-      >
-        My Profile
-      </Button>
-      <Button
-        mode="contained"
-        color="#ED127C"
-        onPress={() => navigation.navigate("FAQScreen")}
-      >
-        FAQs
-      </Button>
-      <Button
-        mode="contained"
-        color="#ED127C"
-        onPress={() => console.log("click")}
-      >
-        Logout
-      </Button>
-      <Image
-        style={{
-          resizeMode: "contain",
-          height: 150,
-          width: 200,
-        }}
-        source={require("../assets/images/woman.png")}
-      />
+
+      <View style={styles.topCont}>
+        <Text style={styles.title}>Good morning, Jane!</Text>
+        <Text style={styles.body}>How are you feeling today?</Text>
+      </View>
+
+      <View style={styles.buttonsCont}>
+        <Button
+          mode="contained"
+          color="#ED127C"
+          uppercase={false}
+          onPress={() => navigation.navigate("MapViewScreen")}
+          style={{padding: 8, paddingLeft: 16, paddingRight: 16, borderRadius: 50}}
+        >
+          <Text style={styles.buttonText}>Review a Clinic</Text>
+        </Button>
+        <Button
+          mode="contained"
+          color="#ED127C"
+          uppercase={false}
+          onPress={() => navigation.navigate("UserProfileScreen")}
+          style={{marginTop: 32, padding: 8, paddingLeft: 16, paddingRight: 16, borderRadius: 50}}
+        >
+          <Text style={styles.buttonText}>Update Details</Text>
+        </Button>
+      </View>
+      
+      <View style={styles.imgCont}>
+        <Image
+        style={{resizeMode: "contain", height: 150, width: 200, position: "absolute", bottom: 0, left: 0}}
+        source={require("../assets/images/woman.png")}/>
+      </View>
     </View>
   );
 }
@@ -76,8 +59,22 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "flex-start",
     justifyContent: "flex-start",
-    paddingLeft: 32,
     paddingTop: 8
+  },
+  topCont: {
+    flex: 2,
+    backgroundColor: "#F9F8FD",
+    paddingTop: 8,
+    paddingLeft: 32
+  },
+  buttonsCont: {
+    flex: 3,
+    backgroundColor: "#F9F8FD",
+    alignSelf: "center"
+  },
+  imgCont: {
+    flex: 1,
+    backgroundColor: "#F9F8FD",
   },
   title: {
     fontSize: 36,
@@ -90,20 +87,9 @@ const styles = StyleSheet.create({
     color: '#1E1C61',
     fontFamily: "poppins-regular",
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-  subheader: {
+  buttonText: {
     fontSize: 18,
-    fontFamily: "poppins-semibold",
-  },
-  button: {
-    alignContent: "center",
-    color: "#ED127C",
-    fontSize: 18,
-    fontFamily: "poppins-light",
-    margin: "1em 1em",
-  },
+    color: '#FFFFFF',
+    fontFamily: "poppins-regular",
+  }
 });
