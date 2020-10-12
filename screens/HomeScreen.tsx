@@ -18,34 +18,37 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
 
-      <View style={styles.top}>
+      <View style={styles.topCont}>
         <Text style={styles.title}>Good morning, Jane!</Text>
         <Text style={styles.body}>How are you feeling today?</Text>
       </View>
 
-      <Button
-        mode="contained"
-        color="#ED127C"
-        uppercase={false}
-        onPress={() => navigation.navigate("MapViewScreen")}
-        style={{marginTop: 64, alignSelf: "center"}}
-      >
-        <Text style={styles.buttonText}>Review a Clinic</Text>
-      </Button>
-      <Button
-        mode="contained"
-        color="#ED127C"
-        uppercase={false}
-        onPress={() => navigation.navigate("UserProfileScreen")}
-        style={{marginTop: 32, alignSelf: "center"}}
-      >
-        <Text style={styles.buttonText}>Update Details</Text>
-      </Button>
+      <View style={styles.buttonsCont}>
+        <Button
+          mode="contained"
+          color="#ED127C"
+          uppercase={false}
+          onPress={() => navigation.navigate("MapViewScreen")}
+          style={{padding: 8, paddingLeft: 16, paddingRight: 16, borderRadius: 50}}
+        >
+          <Text style={styles.buttonText}>Review a Clinic</Text>
+        </Button>
+        <Button
+          mode="contained"
+          color="#ED127C"
+          uppercase={false}
+          onPress={() => navigation.navigate("UserProfileScreen")}
+          style={{marginTop: 32, padding: 8, paddingLeft: 16, paddingRight: 16, borderRadius: 50}}
+        >
+          <Text style={styles.buttonText}>Update Details</Text>
+        </Button>
+      </View>
       
-      <Image
+      <View style={styles.imgCont}>
+        <Image
         style={{resizeMode: "contain", height: 150, width: 200, position: "absolute", bottom: 0, left: 0}}
-        source={require("../assets/images/woman.png")}
-      />
+        source={require("../assets/images/woman.png")}/>
+      </View>
     </View>
   );
 }
@@ -58,9 +61,20 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     paddingTop: 8
   },
-  top: {
+  topCont: {
+    flex: 2,
     backgroundColor: "#F9F8FD",
+    paddingTop: 8,
     paddingLeft: 32
+  },
+  buttonsCont: {
+    flex: 3,
+    backgroundColor: "#F9F8FD",
+    alignSelf: "center"
+  },
+  imgCont: {
+    flex: 1,
+    backgroundColor: "#F9F8FD",
   },
   title: {
     fontSize: 36,
