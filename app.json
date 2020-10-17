@@ -1,5 +1,6 @@
 {
   "expo": {
+<<<<<<< HEAD
     "name": "withyouapp",
     "slug": "withyouapp",
     "version": "1.0.0",
@@ -9,6 +10,21 @@
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/logo.png",
+=======
+    "name": "Withyouapp",
+    "slug": "withyouapp",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+>>>>>>> c1a7bd9f6bc339f0fc7b4d4e7ace85662a15449c
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -20,9 +36,12 @@
     ],
     "ios": {
       "supportsTablet": true
+<<<<<<< HEAD
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
+=======
+>>>>>>> c1a7bd9f6bc339f0fc7b4d4e7ace85662a15449c
     }
   }
 }

@@ -6,7 +6,11 @@
     "moduleResolution": "node",
     "noEmit": true,
     "skipLibCheck": true,
+<<<<<<< HEAD
     "resolveJsonModule": true,
     "strict": true
+=======
+    "resolveJsonModule": true
+>>>>>>> c1a7bd9f6bc339f0fc7b4d4e7ace85662a15449c
   }
 }
