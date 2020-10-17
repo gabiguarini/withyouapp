@@ -3,7 +3,6 @@ import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { emailValidator } from '../core/utils';
 import Background from '../components/Background';
 import BackButton from '../components/BackButton';
-import Logo from '../components/Logo';
 import Header from '../components/Header';
 import TextInput from '../components/TextInput';
 import { theme } from '../core/theme';
@@ -32,8 +31,6 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
     <Background>
       <BackButton goBack={() => navigation.navigate('LoginScreen')} />
 
-      <Logo />
-
       <Header>Restore Password</Header>
 
       <TextInput
@@ -50,7 +47,7 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
       />
 
       <Button mode="contained" onPress={_onSendPressed} style={styles.button}>
-        Send Reset Instructions
+        Ok
       </Button>
 
       <TouchableOpacity
@@ -69,7 +66,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   button: {
-    marginTop: 12,
+    marginTop: 22,
   },
   label: {
     color: theme.colors.secondary,

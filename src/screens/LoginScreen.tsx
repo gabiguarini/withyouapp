@@ -1,9 +1,9 @@
 import React, { memo, useState } from 'react';
 import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
-import Background from '../components/Background';
-import Logo from '../components/Logo';
+import BackgroundLog from '../components/BackgroundLog';
 import Header from '../components/Header';
 import Button from '../components/Button';
+import Paragraph from '../components/Paragraph';
 import TextInput from '../components/TextInput';
 import BackButton from '../components/BackButton';
 import { theme } from '../core/theme';
@@ -31,15 +31,14 @@ const LoginScreen = ({ navigation }: Props) => {
     navigation.navigate('Dashboard');
   };
 
-  return (
-    <Background>
+    return (
+        <BackgroundLog >
       <BackButton goBack={() => navigation.navigate('HomeScreen')} />
 
-      <Logo />
-
-      <Header>Welcome back.</Header>
-
-      <TextInput
+          <Header>Welcome Back</Header>
+            <Text style={styles.text}>Login with your credentials to continue using With You</Text>
+            <TextInput
+                style={styles.input}
         label="Email"
         returnKeyType="next"
         value={email.value}
@@ -50,6 +49,7 @@ const LoginScreen = ({ navigation }: Props) => {
         autoCompleteType="email"
         textContentType="emailAddress"
         keyboardType="email-address"
+                
       />
 
       <TextInput
@@ -80,15 +80,28 @@ const LoginScreen = ({ navigation }: Props) => {
           <Text style={styles.link}>Sign up</Text>
         </TouchableOpacity>
       </View>
-    </Background>
+    </BackgroundLog>
   );
 };
 
 const styles = StyleSheet.create({
+    input: {
+        marginTop:130,
+    },
+    text: {
+        fontSize: 18,
+        lineHeight: 20,
+        color: '#ffffff',
+        textAlign: 'left',
+        position: "absolute",
+        left: 5,
+        top: 210,
+    },
   forgotPassword: {
     width: '100%',
-    alignItems: 'flex-end',
-    marginBottom: 24,
+      alignItems: 'center',
+      marginTop: 20,
+    marginBottom: 4,
   },
   row: {
     flexDirection: 'row',

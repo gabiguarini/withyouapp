@@ -8,8 +8,8 @@ type Props = React.ComponentProps<typeof Input> & { errorText?: string };
 const TextInput = ({ errorText, ...props }: Props) => (
   <View style={styles.container}>
     <Input
-      style={styles.input}
-      selectionColor={theme.colors.primary}
+            style={styles.input}
+            selectionColor={theme.colors.withucolor}
       underlineColor="transparent"
       mode="outlined"
       {...props}
@@ -21,9 +21,11 @@ const TextInput = ({ errorText, ...props }: Props) => (
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    marginVertical: 12,
+        marginVertical: 12,
+        position: "relative",
+        top: 25,
   },
-  input: {
+    input: {
     backgroundColor: theme.colors.surface,
   },
   error: {

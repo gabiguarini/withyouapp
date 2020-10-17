@@ -7,8 +7,8 @@ const Logo = () => (
 
 const styles = StyleSheet.create({
   image: {
-    width: 128,
-    height: 128,
+    width: 328,
+    height: 328,
     marginBottom: 12,
   },
 });

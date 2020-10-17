@@ -12,11 +12,13 @@ const Paragraph = ({ children }: Props) => (
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 16,
-    lineHeight: 26,
-    color: theme.colors.secondary,
-    textAlign: 'center',
-    marginBottom: 14,
+    fontSize: 18,
+    lineHeight: 20,
+    color: '#ffffff',
+        textAlign: 'left',
+        position: "absolute",
+        left: 5,
+        top: 175,
   },
 });
 

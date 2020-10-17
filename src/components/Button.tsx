@@ -8,8 +8,8 @@ type Props = React.ComponentProps<typeof PaperButton>;
 const Button = ({ mode, style, children, ...props }: Props) => (
   <PaperButton
     style={[
-      styles.button,
-      mode === 'outlined' && { backgroundColor: theme.colors.surface },
+            styles.button,
+            mode === 'contained' && { backgroundColor: theme.colors.withucolor },
       style,
     ]}
     labelStyle={styles.text}
@@ -22,12 +22,13 @@ const Button = ({ mode, style, children, ...props }: Props) => (
 
 const styles = StyleSheet.create({
   button: {
-    width: '100%',
-    marginVertical: 10,
+    width: '60%',
+        marginVertical: 20,
+        borderRadius: 60,
   },
-  text: {
-    fontWeight: 'bold',
-    fontSize: 15,
+    text: {
+        fontWeight: 'normal',
+    fontSize: 18,
     lineHeight: 26,
   },
 });

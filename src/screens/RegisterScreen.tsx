@@ -1,9 +1,8 @@
 import React, { memo, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Background from '../components/Background';
-import Logo from '../components/Logo';
 import Header from '../components/Header';
-import Button from '../components/Button';
+import NextBtn from '../components/NextBtn';
 import TextInput from '../components/TextInput';
 import BackButton from '../components/BackButton';
 import { theme } from '../core/theme';
@@ -13,6 +12,7 @@ import {
   passwordValidator,
   nameValidator,
 } from '../core/utils';
+import Paragraph from '../components/Paragraph';
 
 type Props = {
   navigation: Navigation;
@@ -42,10 +42,8 @@ const RegisterScreen = ({ navigation }: Props) => {
     <Background>
       <BackButton goBack={() => navigation.navigate('HomeScreen')} />
 
-      <Logo />
-
-      <Header>Create Account</Header>
-
+          <Header>Sign Up</Header>
+          <Paragraph>Tell us more about yourself to get started</Paragraph>
       <TextInput
         label="Name"
         returnKeyType="next"
@@ -78,23 +76,17 @@ const RegisterScreen = ({ navigation }: Props) => {
         secureTextEntry
       />
 
-      <Button mode="contained" onPress={_onSignUpPressed} style={styles.button}>
-        Sign Up
-      </Button>
+      <NextBtn mode="contained" onPress={_onSignUpPressed} style={styles.button}>
+       
+      </NextBtn>
 
-      <View style={styles.row}>
-        <Text style={styles.label}>Already have an account? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
-          <Text style={styles.link}>Login</Text>
-        </TouchableOpacity>
-      </View>
     </Background>
   );
 };
 
 const styles = StyleSheet.create({
-  label: {
-    color: theme.colors.secondary,
+    label: {
+        color: theme.colors.withucolor,
   },
   button: {
     marginTop: 24,
@@ -103,10 +95,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 4,
   },
-  link: {
-    fontWeight: 'bold',
-    color: theme.colors.primary,
-  },
+  
 });
 
 export default memo(RegisterScreen);
